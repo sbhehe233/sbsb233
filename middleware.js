@@ -16,7 +16,6 @@ export async function middleware(req) {
     return authFail(req)
   } else {
     const [user, password] = authHeaderToBase64(authHeader)
-    console.log(process.env.USERNAME,process.env.PASSWORD)
 
     if (user!==process.env.USERNAME || password!==process.env.PASSWORD) {
       return authFail(req)
